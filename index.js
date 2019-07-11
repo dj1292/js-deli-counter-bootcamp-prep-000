@@ -14,10 +14,16 @@ function nowServing(queue) {
 }
 
 function currentLine(line) {
-  var i = 0
+  
   if (line.length === 0) {
     return "The line is currently empty."
   } else if (line.length > 0) {
-    return `The line is currently: ${i + 1}. ${line[i]}, ${i + 2}. ${line[i + 1]}, ${i + 3}. ${line[i + 2]}` 
+    var newArr = []
+    for (var i = 0; i < line.length; i++) {
+      newArr.push(`${i + 1}. ${line[i]}`)
+    }
+    return `The line is currently: ${newArr}`
+    
+   // return `The line is currently: ${i + 1}. ${line[i]}, ${i + 2}. ${line[i + 1]}, ${i + 3}. ${line[i + 2]}` 
   }
 }
